@@ -51,6 +51,7 @@ public class CharacterService {
             characterProfiles.setLocation(4);
             hit = ((int) randomValues.get(4)) * 2;
             characterProfiles.setHitPoints(hit);
+            characterProfiles.setWis((int) randomValues.get(1));
 
             switch (anClass) {
 
@@ -60,7 +61,7 @@ public class CharacterService {
                     characterProfiles.setAnInt((int) randomValues.get(randomValues.size() - 1));
 
                     //rest of the values
-                    characterProfiles.setWis((int) randomValues.get(1));
+
                     characterProfiles.setCha((int) randomValues.get(2));
                     characterProfiles.setDex((int) randomValues.get(3));
                     return (characterRepository.save(characterProfiles));
@@ -71,7 +72,6 @@ public class CharacterService {
                     characterProfiles.setStr((int) randomValues.get(randomValues.size() - 1));
 
                     //rest of the values
-                    characterProfiles.setWis((int) randomValues.get(1));
                     characterProfiles.setCha((int) randomValues.get(2));
                     characterProfiles.setDex((int) randomValues.get(3));
                     return (characterRepository.save(characterProfiles));
@@ -82,7 +82,6 @@ public class CharacterService {
                     characterProfiles.setCha((int) randomValues.get(randomValues.size() - 1));
 
                     //rest of the values
-                    characterProfiles.setWis((int) randomValues.get(1));
                     characterProfiles.setAnInt((int) randomValues.get(2));
                     characterProfiles.setStr((int) randomValues.get(3));
                     return (characterRepository.save(characterProfiles));
@@ -94,7 +93,6 @@ public class CharacterService {
                     characterProfiles.setStr((int) randomValues.get(randomValues.size() - 1));
 
                     //rest of the values
-                    characterProfiles.setWis((int) randomValues.get(1));
                     characterProfiles.setAnInt((int) randomValues.get(2));
                     characterProfiles.setDex((int) randomValues.get(3));
                     return (characterRepository.save(characterProfiles));
@@ -104,7 +102,6 @@ public class CharacterService {
                     throw new InvalidClassNameException();
 
             }
-
 
     }
 
