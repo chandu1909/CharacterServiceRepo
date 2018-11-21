@@ -1,7 +1,7 @@
 package com.galvanize.ThanksGivingProject.GenerateCharacter.model;
 
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity(name = "CHARACTERS" )
 public class CharacterProfiles {
@@ -9,16 +9,43 @@ public class CharacterProfiles {
     public CharacterProfiles(){
 
     }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "anClass")
     private String anClass;
+
+    @Column(name = "anInt")
     private int anInt;
+
+    @Column(name = "wis")
     private int wis;
+
+
+    @Column(name = "cha")
+    private int cha;
+
+    @Column(name="str")
     private int str;
+
+    @Column(name = "dex")
     private int dex;
+
+    @Column(name = "con")
     private int con;
+
+    @Column(name = "location")
     private int location;
-    private int inventory;
+
+    @Column(name = "inventory")
+    private int inventory[];
+
+    @Column(name = "hitPoints")
     private int hitPoints;
 
 
@@ -86,7 +113,6 @@ public class CharacterProfiles {
         this.con = con;
     }
 
-
     public int getLocation() {
         return location;
     }
@@ -95,11 +121,11 @@ public class CharacterProfiles {
         this.location = location;
     }
 
-    public int getInventory() {
+    public int[] getInventory() {
         return inventory;
     }
 
-    public void setInventory(int inventory) {
+    public void setInventory(int[] inventory) {
         this.inventory = inventory;
     }
 
@@ -111,7 +137,15 @@ public class CharacterProfiles {
         this.hitPoints = hitPoints;
     }
 
-    public CharacterProfiles(Long id, String name, String anClass,int anInt,int wis, int str, int dex, int con, int location, int inventory,int hitPoints ){
+    public int getCha() {
+        return cha;
+    }
+
+    public void setCha(int cha) {
+        this.cha = cha;
+    }
+
+    public CharacterProfiles(Long id, String name, String anClass,int anInt,int wis, int cha, int str, int dex, int con, int location,int hitPoints ){
         this.id = id;
         this.name = name;
         this.anClass = anClass;
@@ -121,8 +155,8 @@ public class CharacterProfiles {
         this.con = con;
         this.dex = dex;
         this.location = location;
-        this.inventory = inventory;
         this.hitPoints = hitPoints;
+        this.cha = cha;
     }
 
 
